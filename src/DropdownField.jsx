@@ -10,7 +10,7 @@ export const DropdownField = ({ value, name, options, onChange, ...props }) => {
         setSelectedValue(event.target.value);
         onChange(event);
     };
-    const selectedValueNotInOptions = useMemo(() => {
+    const selectedValueNotInOptions = useMemo(() => () => {
         return selectedValue !== '' && options.find((o)=> o.value === selectedValue) === undefined
     }, [selectedValue, options]);
     return (
